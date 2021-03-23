@@ -1,0 +1,63 @@
+{
+  "mode": "test",
+  "tz": "Australia/Melbourne",
+  "binance": {
+    "live": {
+      "apiKey": "",
+      "secretKey": ""
+    },
+    "test": {
+      "apiKey": "",
+      "secretKey": ""
+    }
+  },
+  "redis": {
+    "host": "binance-redis",
+    "port": 6379,
+    "password": ""
+  },
+  "mongo": {
+    "host": "binance-mongo",
+    "port": 27017,
+    "database": "binance-bot"
+  },
+  "slack": {
+    "enabled": false,
+    "webhookUrl": "",
+    "channel": "",
+    "username": ""
+  },
+  "localTunnel": {
+    "enabled": true,
+    "subdomain": "default"
+  },
+  "jobs": {
+    "alive": {
+      "enabled": true,
+      "cronTime": "0 0 9 * * *"
+    },
+    "trailingTrade": {
+      "enabled": true,
+      "cronTime": "* * * * * *",
+      "symbols": ["BTCUSDT", "ETHUSDT"],
+      "supportFIATs": ["USDT"],
+      "candles": {
+        "interval": "1h",
+        "limit": 100
+      },
+      "buy": {
+        "enabled": true,
+        "maxPurchaseAmount": 100,
+        "triggerPercentage": 1.0,
+        "stopPercentage": 1.02,
+        "limitPercentage": 1.021
+      },
+      "sell": {
+        "enabled": true,
+        "triggerPercentage": 1.06,
+        "stopPercentage": 0.98,
+        "limitPercentage": 0.979
+      }
+    }
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "mode": "BINANCE_MODE",
+  "tz": "BINANCE_TZ",
+  "binance": {
+    "live": {
+      "apiKey": "BINANCE_LIVE_API_KEY",
+      "secretKey": "BINANCE_LIVE_SECRET_KEY"
+    },
+    "test": {
+      "apiKey": "BINANCE_TEST_API_KEY",
+      "secretKey": "BINANCE_TEST_SECRET_KEY"
+    }
+  },
+  "redis": {
+    "host": "BINANCE_REDIS_HOST",
+    "port": {
+      "__name": "BINANCE_REDIS_PORT",
+      "__format": "number"
+    },
+    "password": "BINANCE_REDIS_PASSWORD"
+  },
+  "mongo": {
+    "host": "BINANCE_MONGO_HOST",
+    "port": {
+      "__name": "BINANCE_MONGO_PORT",
+      "__format": "number"
+    },
+    "database": "BINANCE_MONGO_DATABASE"
+  },
+  "slack": {
+    "enabled": {
+      "__name": "BINANCE_SLACK_ENABLED",
+      "__format": "boolean"
+    },
+    "webhookUrl": "BINANCE_SLACK_WEBHOOK_URL",
+    "channel": "BINANCE_SLACK_CHANNEL",
+    "username": "BINANCE_SLACK_USERNAME"
+  },
+  "localTunnel": {
+    "enabled": {
+      "__name": "BINANCE_LOCAL_TUNNEL_ENABLED",
+      "__format": "boolean"
+    },
+    "subdomain": "BINANCE_LOCAL_TUNNEL_SUBDOMAIN"
+  },
+  "jobs": {
+    "alive": {
+      "enabled": {
+        "__name": "BINANCE_JOBS_ALIVE_ENABLED",
+        "__format": "boolean"
+      },
+      "cronTime": "BINANCE_JOBS_ALIVE_CRONTIME",
+      "priceSymbol": "BINANCE_JOBS_ALIVE_PRICE_SYMBOL",
+      "balanceSymbols": "BINANCE_JOBS_ALIVE_BALANCE_SYMBOLS"
+    },
+    "trailingTrade": {
+      "enabled": {
+        "__name": "BINANCE_JOBS_TRAILING_TRADE_ENABLED",
+        "__format": "boolean"
+      },
+      "cronTime": "BINANCE_JOBS_TRAILING_TRADE_CRON_TIME",
+      "symbols": {
+        "__name": "BINANCE_JOBS_TRAILING_TRADE_SYMBOLS",
+        "__format": "json"
+      },
+      "supportFIATs": {
+        "__name": "BINANCE_JOBS_TRAILING_TRADE_SUPPORT_FIATS",
+        "__format": "json"
+      },
+      "candles": {
+        "interval": "BINANCE_JOBS_TRAILING_TRADE_CANDLES_INTERVAL",
+        "limit": {
+          "__name": "BINANCE_JOBS_TRAILING_TRADE_CANDLES_LIMIT",
+          "__format": "number"
+        }
+      },
+      "buy": {
+        "enabled": {
+          "__name": "BINANCE_JOBS_TRAILING_TRADE_BUY_ENABLED",
+          "__format": "boolean"
+        },
+        "maxPurchaseAmount": {
+          "__name": "BINANCE_JOBS_TRAILING_TRADE_BUY_MAX_PURCHASE_AMOUNT",
+          "__format": "number"
+        },
+        "triggerPercentage": {
+          "__name": "BINANCE_JOBS_TRAILING_TRADE_BUY_TRIGGER_PERCENTAGE",
+          "__format": "number"
+        },
+        "stopPercentage": {
+          "__name": "BINANCE_JOBS_TRAILING_TRADE_BUY_STOP_PERCENTAGE",
+          "__format": "number"
+        },
+        "limitPercentage": {
+          "__name": "BINANCE_JOBS_TRAILING_TRADE_BUY_LIMIT_PERCENTAGE",
+          "__format": "number"
+        }
+      },
+      "sell": {
+        "enabled": {
+          "__name": "BINANCE_JOBS_TRAILING_TRADE_SELL_ENABLED",
+          "__format": "boolean"
+        },
+        "triggerPercentage": {
+          "__name": "BINANCE_JOBS_TRAILING_TRADE_SELL_TRIGGER_PERCENTAGE",
+          "__format": "number"
+        },
+        "stopPercentage": {
+          "__name": "BINANCE_JOBS_TRAILING_TRADE_SELL_STOP_PERCENTAGE",
+          "__format": "number"
+        },
+        "limitPercentage": {
+          "__name": "BINANCE_JOBS_TRAILING_TRADE_SELL_LIMIT_PERCENTAGE",
+          "__format": "number"
+        }
+      }
+    }
+  }
+}
