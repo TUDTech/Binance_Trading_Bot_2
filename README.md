@@ -218,28 +218,43 @@ parameters.
 
 ## Screenshots
 
-| Frontend Mobile                                                                                                          | Setting                                                                                                          |
-| ------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------- |
-| ![Frontend Mobile](![Screen Shot 2021-03-23 at 20 58 41](https://user-images.githubusercontent.com/81108192/112217452-8eef0700-8c1a-11eb-8678-6ad50c2124bb.png)
-) | ![Setting]([Screen Shot 2021-03-23 at 20 56 33](https://user-images.githubusercontent.com/81108192/112217197-45062100-8c1a-11eb-96e4-bcf888f34187.png)) |
+Frontend Mobile                                                                                                         
 
-| Frontend Desktop                                                                                                          |
-| ------------------------------------------------------------------------------------------------------------------------- |
-| ![Frontend Desktop](https://user-images.githubusercontent.com/5715919/111430212-28677600-874e-11eb-9314-1d617e25fd06.png) |
+![Screen Shot 2021-03-23 at 21 00 20](https://user-images.githubusercontent.com/81108192/112217743-c958a400-8c1a-11eb-9f92-cb8bd4a1b4ce.png)
 
-### Sample Trade
+Setting
 
-| Chart                                                                                                          | Buy Orders                                                                                                          | Sell Orders                                                                                                          |
-| -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| ![Chart](https://user-images.githubusercontent.com/5715919/111027391-192db300-8444-11eb-8df4-91c98d0c835b.png) | ![Buy Orders](https://user-images.githubusercontent.com/5715919/111027403-36628180-8444-11eb-91dc-f3cdabc5a79e.png) | ![Sell Orders](https://user-images.githubusercontent.com/5715919/111027411-4b3f1500-8444-11eb-8525-37f02a63de25.png) |
+![Screen Shot 2021-03-23 at 21 00 49](https://user-images.githubusercontent.com/81108192/112217799-daa1b080-8c1a-11eb-9b37-1b30fc69fb81.png)
 
-### Last 30 days trade
+Frontend Desktop
 
-| Trade History                                                                                                          | PNL Analysis                                                                                                           |
-| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| ![Trade History](https://user-images.githubusercontent.com/5715919/111430291-4503ae00-874e-11eb-9e68-aefa4bca19b2.png) | ![Profit & Loss](https://user-images.githubusercontent.com/5715919/111430313-4df47f80-874e-11eb-9f3d-e85cf3027d74.png) |
+![Screen Shot 2021-03-23 at 21 03 29](https://user-images.githubusercontent.com/81108192/112218085-39ffc080-8c1b-11eb-946d-ff0803c20dd0.png)
 
-## Changes & Todo
+## Sample Trade
+
+Chart         
+
+![Screen Shot 2021-03-23 at 21 03 59](https://user-images.githubusercontent.com/81108192/112218139-4c79fa00-8c1b-11eb-94ac-e8782ce45213.png)
+
+Buy Orders
+
+![Screen Shot 2021-03-23 at 21 04 37](https://user-images.githubusercontent.com/81108192/112218213-6287ba80-8c1b-11eb-960d-2fb013f1a595.png)
+
+Sell Orders
+
+![Screen Shot 2021-03-23 at 21 05 12](https://user-images.githubusercontent.com/81108192/112218295-77644e00-8c1b-11eb-98ac-1ece48509c02.png)
+
+## Last 30 days trade
+
+Trade History                                                                                                       
+
+![Screen Shot 2021-03-23 at 21 05 47](https://user-images.githubusercontent.com/81108192/112218383-8ba84b00-8c1b-11eb-94b9-e6e72029634e.png)
+
+PNL Analysis
+
+![Screen Shot 2021-03-23 at 21 06 24](https://user-images.githubusercontent.com/81108192/112218456-a1b60b80-8c1b-11eb-8d0a-17cf6f5185fb.png)
+
+## Functions
 
 - [x] Support multiple symbols
 - [x] Remove unused methods - Bollinger Bands, MACD Stop Chaser
