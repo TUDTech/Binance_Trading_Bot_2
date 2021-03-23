@@ -1,43 +1,10 @@
 # Binance Trading Bot
 
-[![GitHub version](https://img.shields.io/github/package-json/v/chrisleekr/binance-trading-bot)](https://github.com/chrisleekr/binance-trading-bot/releases)
-[![Build](https://github.com/chrisleekr/binance-trading-bot/workflows/main/badge.svg)](https://github.com/chrisleekr/binance-trading-bot/actions?query=workflow%3Amain)
-[![CodeCov](https://codecov.io/gh/chrisleekr/binance-trading-bot/branch/master/graph/badge.svg)](https://codecov.io/gh/chrisleekr/binance-trading-bot)
-[![Docker pull](https://img.shields.io/docker/pulls/chrisleekr/binance-trading-bot)](https://hub.docker.com/r/chrisleekr/binance-trading-bot)
-[![GitHub contributors](https://img.shields.io/github/contributors/chrisleekr/binance-trading-bot)](https://github.com/chrisleekr/binance-trading-bot/graphs/contributors)
-[![MIT License](https://img.shields.io/github/license/chrisleekr/binance-trading-bot)](https://github.com/chrisleekr/binance-trading-bot/blob/master/LICENSE)
-
-> Automated Binance trading bot with trailing buy/sell strategy
+Automated Binance trading bot with trailing buy/sell strategy
 
 ---
 
-[![ko](https://img.shields.io/badge/lang-한국어-brightgreen.svg)](https://github.com/chrisleekr/binance-trading-bot/blob/master/README.ko.md)
-
-This is a test project. I am just testing my code.
-
-## Warnings
-
-**I cannot guarantee whether you can make money or not.**
-
-**So use it at your own risk! I have no responsibility for any loss or hardship
-incurred directly or indirectly by using this code.**
-
-**Before updating the bot, make sure to record the last buy price in the note.
-It may lose the configuration or last buy price records.**
-
-## Breaking Changes
-
-As I introduce a new feature, I did lots of refactoring the code including
-settings. If the bot version is lower than the version `0.0.57`, then the update
-will cause lost your settings and the last buy price records. You must write
-down settings and the last buy price records and re-configure after the upgrade.
-
-If experiences any issue, simply delete all docker volumes/images and re-launch
-the bot.
-
-## How it works
-
-### Trailing Buy/Sell Bot
+## Trailing Buy/Sell Bot
 
 This bot is using the concept of trailing buy/sell order which allows following
 the price fall/rise.
@@ -49,11 +16,9 @@ the price fall/rise.
   frontend. However, I didn't test in the live server. So use with your own
   risk.
 - The bot is using MongoDB to provide a persistence database. However, it does
-  not use the latest MongoDB to support Raspberry Pi 32bit. Used MongoDB version
-  is 3.2.20, which is provided by
-  [apcheamitru](https://hub.docker.com/r/apcheamitru/arm32v7-mongo).
-
-#### Buy Signal
+  not use the latest MongoDB to support Raspberry Pi 32bit.
+  
+## Buy Signal
 
 The bot will continuously monitor the lowest value for the period of the
 candles. Once the current price reaches the lowest price, then the bot will
@@ -64,7 +29,7 @@ order with the new price.
 - The bot will not place a buy order if has enough coin (typically over $10
   worth) to sell when reaches the trigger price for selling.
 
-##### Buy Scenario
+## Buy Scenario
 
 Let say, if the buy configurations are set as below:
 
@@ -89,9 +54,7 @@ In the next tick, the market changes as below:
 - Trigger price: $100.5
 
 The bot will place new STOP-LOSS-LIMIT order for buying because the current
-price ($100) is less than the trigger price ($100.5). For the simple
-calculation, I do not take an account for the commission. In real trading, the
-quantity may be different. The new buy order will be placed as below:
+price ($100) is less than the trigger price ($100.5). The new buy order will be placed as below:
 
 - Stop price: $100 \* 1.01 = $101
 - Limit price: $100 \* 1.011 = $101.1
@@ -121,7 +84,7 @@ And if the market changes as below in the next tick:
 Then the current price reaches the stop price ($99.99); hence, the order will be
 executed with the limit price ($100.089).
 
-### Sell Signal
+## Sell Signal
 
 If there is enough balance for selling and the last buy price is recorded in the
 bot, then the bot will start monitoring the sell signal. Once the current price
@@ -135,7 +98,7 @@ previous order and re-place the new STOP-LOSS-LIMIT order with the new price.
 - If the bot does not have a record for the last buy price, the bot will not
   sell the coin.
 
-#### Sell Scenario
+## Sell Scenario
 
 Let say, if the sell configurations are set as below:
 
@@ -194,7 +157,7 @@ And if the market changes as below in the next tick:
 The the current price reaches the stop price ($103.88); hence, the order will be
 executed with the limit price ($103.774).
 
-### Frontend + WebSocket
+## Frontend + WebSocket
 
 React.js based frontend communicating via Web Socket:
 
@@ -211,8 +174,6 @@ Use environment parameters to adjust parameters. Check
 `/config/custom-environment-variables.json` to see list of available environment
 parameters.
 
-Or use the frontend to adjust configurations after launching the application.
-
 ## How to use
 
 1. Create `.env` file based on `.env.dist`.
@@ -225,7 +186,7 @@ Or use the frontend to adjust configurations after launching the application.
    | BINANCE_TEST_SECRET_KEY        | Binance API secret for test       | (from Binance) |
    | BINANCE_SLACK_WEBHOOK_URL      | Slack webhook URL                 | (from Slack)   |
    | BINANCE_SLACK_CHANNEL          | Slack channel                     | "#binance"     |
-   | BINANCE_SLACK_USERNAME         | Slack username                    | Chris          |
+   | BINANCE_SLACK_USERNAME         | Slack username                    | Jack           |
    | BINANCE_LOCAL_TUNNEL_SUBDOMAIN | Local tunnel public URL subdomain | binance        |
 
 2. Check `docker-compose.yml` for `BINANCE_MODE` environment parameter
@@ -255,13 +216,12 @@ Or use the frontend to adjust configurations after launching the application.
 
 4. Open browser `http://0.0.0.0:8080` to see the frontend
 
-   - When launching the application, it will notify public URL to the Slack.
-
 ## Screenshots
 
 | Frontend Mobile                                                                                                          | Setting                                                                                                          |
 | ------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------- |
-| ![Frontend Mobile](https://user-images.githubusercontent.com/5715919/111430413-72e8f280-874e-11eb-9870-6603282fde8e.png) | ![Setting](https://user-images.githubusercontent.com/5715919/111027223-f2bb4800-8442-11eb-9f5d-95f77298f4c0.png) |
+| ![Frontend Mobile](![Screen Shot 2021-03-23 at 20 58 41](https://user-images.githubusercontent.com/81108192/112217452-8eef0700-8c1a-11eb-8678-6ad50c2124bb.png)
+) | ![Setting]([Screen Shot 2021-03-23 at 20 56 33](https://user-images.githubusercontent.com/81108192/112217197-45062100-8c1a-11eb-96e4-bcf888f34187.png)) |
 
 | Frontend Desktop                                                                                                          |
 | ------------------------------------------------------------------------------------------------------------------------- |
@@ -317,36 +277,14 @@ Or use the frontend to adjust configurations after launching the application.
 - [ ] Secure frontend with the password
 - [ ] Allow to disable sorting in the frontend
 
-## Acknowledgments
+## Contributing
 
-- [@d0x2f](https://github.com/d0x2f)
-- [@Maxoos](https://github.com/Maxoos)
-- [@OOtta](https://github.com/OOtta)
+Thanks all for your contributions...
+    
+![Screen Shot 2021-03-21 at 19 11 59](https://user-images.githubusercontent.com/81108192/111917690-519f4380-8a79-11eb-9d01-de457b1655f6.png)
+    
+ETH WALLET: 0xA1134858c168568CBE37649D16723eC8F782e0A2
 
-## Contributors
+![Screen Shot 2021-03-21 at 21 56 54](https://user-images.githubusercontent.com/81108192/111922186-5b807100-8a90-11eb-8504-a3fc3ae35052.png)
 
-<table>
-<tr>
-    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
-        <a href=https://github.com/chrisleekr>
-            <img src=https://avatars.githubusercontent.com/u/5715919?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=chrisleekr/>
-            <br />
-            <sub style="font-size:14px"><b>chrisleekr</b></sub>
-        </a>
-    </td>
-    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
-        <a href=https://github.com/romualdr>
-            <img src=https://avatars.githubusercontent.com/u/5497356?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Romuald R./>
-            <br />
-            <sub style="font-size:14px"><b>Romuald R.</b></sub>
-        </a>
-    </td>
-    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
-        <a href=https://github.com/thamlth>
-            <img src=https://avatars.githubusercontent.com/u/45093611?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=thamlth/>
-            <br />
-            <sub style="font-size:14px"><b>thamlth</b></sub>
-        </a>
-    </td>
-</tr>
-</table>
+BTC WALLET: 3N928MmFq51kbf6fE3fxJbtggBhcjMAhSQ
